@@ -3,13 +3,14 @@ package main
 import (
 	"fmt"
 	"os"
+	"runtime"
 	"time"
 
 	"filippo.io/age"
 	"github.com/danwakefield/fnmatch"
 )
 
-const THREADS = 50
+var THREADS int = runtime.NumCPU()
 
 func main() {
 	if len(os.Args) == 1 {
